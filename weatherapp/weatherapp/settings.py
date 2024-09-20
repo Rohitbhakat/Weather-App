@@ -27,13 +27,15 @@ SECRET_KEY = 'django-insecure-6e3#4f)&v+q)=1opq(j5081+2gv4ewgy(jn%@k)^sqkaubs1u7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 WEATHER_API_KEY = config('WEATHER_API_KEY')
 
 WEATHER_APP_URL =  config('WEATHER_APP_URL')
 
 CURRENT_WEATHER_URL =  config('CURRENT_WEATHER_URL')
+
+ALLOWED_HOSTS = [WEATHER_APP_URL, CURRENT_WEATHER_URL]
+
+
 
 
 # Application definition
