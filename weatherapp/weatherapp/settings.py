@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6e3#4f)&v+q)=1opq(j5081+2gv4ewgy(jn%@k)^sqkaubs1u7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 WEATHER_API_KEY = config('WEATHER_API_KEY')
 

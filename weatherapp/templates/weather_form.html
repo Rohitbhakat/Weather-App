@@ -6,18 +6,22 @@
     <title>Weather App</title>
     <script>
         function updateAction(event, actionType) {
-            event.preventDefault(); // Prevent the default form submission
-            const cityNames = document.getElementById('city').value; // Get city names input
-            const form = event.target.closest('form'); // Get the closest form
+            event.preventDefault(); 
+            const cityNames = document.getElementById('city').value; 
+            if (!cityNames){
+                alert('Please provide a city name');
+                return false;
+            }
+            const form = event.target.closest('form'); 
 
-            // Set the action URL based on the button clicked
+            
             if (actionType === 'avg') {
                 form.action = "{% url 'get_weather_data' city_names='placeholder' %}".replace('placeholder', cityNames);
             } else if (actionType === 'current') {
                 form.action = "{% url 'get_current_weather' city_names='placeholder' %}".replace('placeholder', cityNames);
             }
 
-            // Submit the form
+
             form.submit();
         }
     </script>

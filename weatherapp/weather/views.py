@@ -43,7 +43,7 @@ def get_weather_data(request, city_names):
 
         return render(request, "historical_weather.html", {"weather_data_list": weather_data_list})
     except Exception as e:
-        return render(request, "error.html", {"error_message": str(e)})
+        return render(request, "error.html", {"error_message": str(e)}, status=500)
 
 
 def get_current_weather(request, city_names):
@@ -64,4 +64,4 @@ def get_current_weather(request, city_names):
         )
 
     except Exception as e:
-        return render(request, "error.html", {"error_message": str(e)})
+        return render(request, "error.html", {"error_message": str(e)}, status=500)
