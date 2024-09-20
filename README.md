@@ -26,5 +26,11 @@ Setup Process ---
 API to check - http://localhost:8000
 
 Test Results Upload
+AVG Weather Report of two cities
+![image](https://github.com/user-attachments/assets/7bff3b9c-fb81-4f68-9672-0578a5893f95)
+
+Current Weather Report
+![image](https://github.com/user-attachments/assets/9230635e-3a1b-4ad9-b23d-aa8c397d64ce)
+
 
 
