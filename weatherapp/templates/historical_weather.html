@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+</head>
+<body>
+    <h1>Weather Reports</h1>
+
+    {% if weather_data_list %}
+        {% for weather_data in weather_data_list %}
+            <h2>Weather Report for {{ weather_data.city_name }}</h2>
+            <p>Average Temperature (Last 24 Hours): {{ weather_data.average_temperature }} °C</p>
+            <p>Average Humidity (Last 24 Hours): {{ weather_data.average_humidity }} %</p>
+
+            {% if weather_data.alert %}
+                <p style="color: red;">Alert: {{ weather_data.alert }}</p>
+            {% endif %}
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No weather data available.</p>
+    {% endif %}
+    
+    <a href="{% url 'weather_form' %}">Check Other Cities</a>
+</body>
+</html>

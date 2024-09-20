@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Weather Report</title>
+</head>
+<body>
+    <h1>Current Weather Reports</h1>
+
+    {% if current_weather_data_list %}
+        {% for weather_data in current_weather_data_list %}
+            <h2>Current Weather for {{ weather_data.city_name }}</h2>
+            <p>Temperature: {{ weather_data.temperature }} °C</p>
+            <p>Humidity: {{ weather_data.humidity }} %</p>
+            <p>Condition: {{ weather_data.condition }}</p>
+            <p>Wind Speed: {{ weather_data.wind_speed }} kph</p>
+            <p>Air Quality Index: {{ weather_data.air_quality }}</p>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No weather data available.</p>
+    {% endif %}
+    
+    <a href="{% url 'weather_form' %}">Check Another City</a>
+</body>
+</html>
